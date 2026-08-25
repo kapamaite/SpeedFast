@@ -6,7 +6,17 @@ public class PedidoEncomienda extends Pedido {
 
     @Override
     public int calcularTiempoEntrega() {
-        // 20 min + 1.5 min por km, ajustado a entero
         return (int) Math.round(20 + (1.5 * distanciaKm));
+    }
+
+    @Override
+    public void asignarRepartidor() {
+        System.out.println("Pedido de Encomienda #" + idPedido + ": se requiere validar peso y embalaje.");
+    }
+
+    @Override
+    public void asignarRepartidor(String nombreRepartidor) {
+        System.out.println("Repartidor " + nombreRepartidor + " asignado al pedido de Encomienda #" + idPedido
+                + " -> Validado: peso y embalaje correctos.");
     }
 }

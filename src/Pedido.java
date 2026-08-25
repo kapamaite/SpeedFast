@@ -9,12 +9,24 @@ public abstract class Pedido {
         this.distanciaKm = distanciaKm;
     }
 
-    // Método implementado: datos básicos del pedido
     public void mostrarResumen() {
         System.out.println("Pedido #" + idPedido + " | Dirección: " + direccionEntrega
                 + " | Distancia: " + distanciaKm + " km");
     }
 
-    // Método abstracto: cada subclase lo implementa distinto
     public abstract int calcularTiempoEntrega();
+
+    // Sobrescrito en cada subclase
+    public void asignarRepartidor() {
+        System.out.println("Asignando repartidor genérico para el pedido #" + idPedido);
+    }
+
+    // Sobrecargado
+    public void asignarRepartidor(String nombreRepartidor) {
+        System.out.println("Repartidor " + nombreRepartidor + " asignado al pedido #" + idPedido);
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
 }
